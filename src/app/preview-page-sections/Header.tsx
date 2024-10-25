@@ -5,7 +5,6 @@ import ButtonSecondary from '@/shared/Button/ButtonSecondary';
 import Heading from '@/shared/Heading/Heading';
 
 import { templateDetails } from './content';
-import ImageScroll from './ImageScroll';
 
 const Header = () => {
   return (
@@ -17,27 +16,25 @@ const Header = () => {
           isMain
           isCenter
         >
-          {templateDetails.name}
+          WelCome to HackOholics Market Places
         </Heading>
 
         <div className="flex items-center justify-center gap-5">
           <ButtonPrimary className="shadow-md" sizeClass="px-6 py-4">
-            Buy template
+            Register A Shop
           </ButtonPrimary>
           <ButtonSecondary
             href="/#pages"
             className="border-2 border-primary text-primary shadow-md"
             sizeClass="px-6 py-3.5"
           >
-            Explore pages
+            Shop with Us
           </ButtonSecondary>
         </div>
       </div>
 
       <div className="relative mt-16">
-        <div className="">
-          <ImageScroll />
-        </div>
+        <div className="">{/* <ImageScroll /> */}</div>
       </div>
     </div>
   );

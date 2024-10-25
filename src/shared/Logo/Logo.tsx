@@ -11,7 +11,7 @@ const Logo: FC<LogoProps> = ({ className = 'hidden' }) => {
   return (
     <Link className="flex cursor-pointer items-center gap-2" href="/">
       <RiMicrosoftLoopFill className="text-3xl text-primary" />{' '}
-      <span className={`${className} text-2xl font-bold`}>HotKicks.</span>
+      <span className={`${className} text-2xl font-bold`}>HacksOholics</span>
     </Link>
   );
 };

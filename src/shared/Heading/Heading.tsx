@@ -45,7 +45,9 @@ const Heading: React.FC<HeadingProps> = ({
         >
           {children}
         </h2>
-        {desc && <p className="mt-5 text-neutral-500">{desc}</p>}
+        {desc && (
+          <p className="mt-5 text-neutral-500">Buy and Sell with ease</p>
+        )}
       </div>
       {hasNextPrev && !isCenter && (
         <div className="mt-4 flex shrink-0 justify-end sm:ml-2 sm:mt-0">
