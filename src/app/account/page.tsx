@@ -15,6 +15,9 @@ const AccountScreen = () => {
   const [creditScore, setCreditScore] = useState<number | null>(null);
   const [showDebtDetails, setShowDebtDetails] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [showRefillModal, setShowRefillModal] = useState(false);
+  const [mobileMoneyNumber, setMobileMoneyNumber] = useState("");
+  const [refillAmount, setRefillAmount] = useState(0);
 
   useEffect(() => {
     setKycCompleted(true);
@@ -56,7 +59,7 @@ const AccountScreen = () => {
             Transaction 2 - 250 XAF
           </li>
         </ul>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2   w-full items-center justify-center gap-5">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 w-full items-center justify-center gap-5">
           <ButtonPrimary onClick={() => setIsOpen(true)}>
             Pay arrears
           </ButtonPrimary>
@@ -65,6 +68,56 @@ const AccountScreen = () => {
             className="border border-primary text-primary outline"
           >
             Close
+          </ButtonSecondary>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderRefillModal = () => (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="w-3/4 max-w-md rounded-lg bg-white p-6 shadow-lg">
+        <h3 className="mb-4 text-lg font-semibold">Refill Account Balance</h3>
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Mobile Money Number
+            </label>
+            <input
+              type="text"
+              value={mobileMoneyNumber}
+              onChange={(e) => setMobileMoneyNumber(e.target.value)}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="Enter your mobile money number"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Refill Amount
+            </label>
+            <input
+              type="number"
+              value={refillAmount}
+              onChange={(e) => setRefillAmount(Number(e.target.value))}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              placeholder="Enter refill amount"
+            />
+          </div>
+        </div>
+        <div className="mt-6 flex justify-end space-x-4">
+          <ButtonPrimary
+            onClick={() => {
+              setBalance(balance + refillAmount); // Assuming refill is successful
+              setShowRefillModal(false);
+            }}
+          >
+            Confirm
+          </ButtonPrimary>
+          <ButtonSecondary
+            onClick={() => setShowRefillModal(false)}
+            className="border border-primary text-primary outline"
+          >
+            Cancel
           </ButtonSecondary>
         </div>
       </div>
@@ -96,7 +149,7 @@ const AccountScreen = () => {
       </h2>
 
       <div className="mb-6">
-        <h3 className="text-lg font-semibold">Eligability for credit</h3>
+        <h3 className="text-lg font-semibold">Eligibility for Credit</h3>
         <div className="flex items-center">
           <div className="h-2 w-full rounded-full bg-neutral-200">
             <div
@@ -135,12 +188,16 @@ const AccountScreen = () => {
             <p className="text-sm text-neutral-600">
               <strong>{balance} XAF</strong> (Minimum Required: 2,000 XAF)
             </p>
+            <p
+              className={`mt-1 text-xs ${balance >= 2000 ? "text-green-600" : "text-red-600"
+                }`}
+            >
+              {balance >= 2000 ? "Sufficient Balance" : "Balance Below Minimum"}
+            </p>
           </div>
-          <p
-            className={`text-sm ${balance >= 2000 ? "text-green-600" : "text-red-600"}`}
-          >
-            {balance >= 2000 ? "Sufficient Balance" : "Balance Below Minimum"}
-          </p>
+          <ButtonPrimary onClick={() => setShowRefillModal(true)}>
+            Refill
+          </ButtonPrimary>
         </div>
 
         <div className="flex items-center justify-between rounded-lg bg-neutral-100 p-4">
@@ -167,12 +224,15 @@ const AccountScreen = () => {
             <h3 className="text-lg font-semibold">Credit Score</h3>
             <p className={`text-sm ${creditScoreColor}`}>
               {creditScore !== null
-                ? `${creditScore} / 100`
-                : "Not Calculated Yet"}
+                ? `${creditScore}%`
+                : "Credit score unavailable"}
             </p>
           </div>
         </div>
       </div>
+
+      {showDebtDetails && renderDebtDetailsModal()}
+      {showRefillModal && renderRefillModal()}
       <PaymentModal
         debts={[
           {
@@ -191,11 +251,10 @@ const AccountScreen = () => {
           },
         ]}
         isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
-      />
-      {showDebtDetails && renderDebtDetailsModal()}
+        onRequestClose={() => setIsOpen(false)} />
     </div>
   );
 };
 
 export default AccountScreen;
+
