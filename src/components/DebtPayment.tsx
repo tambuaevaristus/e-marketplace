@@ -25,9 +25,13 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   debts,
 }) => {
   const [selectedDebts, setSelectedDebts] = useState<string[]>([]);
-  const [paymentAmounts, setPaymentAmounts] = useState<{ [key: string]: number }>({});
+  const [paymentAmounts, setPaymentAmounts] = useState<{
+    [key: string]: number;
+  }>({});
   const [payInFull, setPayInFull] = useState<{ [key: string]: boolean }>({});
-  const [paymentMethod, setPaymentMethod] = useState<"mobileMoney" | "orangeMoney">("mobileMoney");
+  const [paymentMethod, setPaymentMethod] = useState<
+    "mobileMoney" | "orangeMoney"
+  >("mobileMoney");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [countdown, setCountdown] = useState(120); // 2 minutes in seconds
@@ -82,11 +86,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   // Countdown timer effect
   useEffect(() => {
     if (isSubmitting && countdown > 0) {
-      const timer = setInterval(() => {
+      setInterval(() => {
         setCountdown((prev) => prev - 1);
       }, 1000);
-
-      return () => clearInterval(timer);
     }
   }, [isSubmitting, countdown]);
 
@@ -94,7 +96,7 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
   const formatCountdown = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
   };
 
   return (
@@ -157,7 +159,12 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                       className="w-full border rounded-md p-2 mb-2"
                       placeholder="Enter amount"
                       value={paymentAmounts[debt.id] || ""}
-                      onChange={(e) => handlePaymentAmountChange(debt.id, parseFloat(e.target.value))}
+                      onChange={(e) =>
+                        handlePaymentAmountChange(
+                          debt.id,
+                          parseFloat(e.target.value)
+                        )
+                      }
                       onClick={(e) => e.stopPropagation()} // Prevent input click from triggering card selection
                     />
                     <div className="flex items-start">
@@ -165,7 +172,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
                         type="checkbox"
                         checked={payInFull[debt.id] || false}
                         className="mr-2"
-                        onChange={() => handlePayInFullToggle(debt.id, debt.amount)}
+                        onChange={() =>
+                          handlePayInFullToggle(debt.id, debt.amount)
+                        }
                         onClick={(e) => e.stopPropagation()} // Prevent checkbox click from triggering card selection
                       />
                       <label className="text-sm" style={{ color: "#A9A9A9" }}>
@@ -223,7 +232,9 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
               sizeClass="px-6 py-3"
               disabled={selectedDebts.length === 0}
               className={`${
-                selectedDebts.length === 0 ? "opacity-50 cursor-not-allowed" : ""
+                selectedDebts.length === 0
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
               }`}
             >
               Submit Payment
@@ -239,7 +250,8 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
 
           {isSubmitting && (
             <p className="text-primary text-center text-sm font-semibold">
-              Please confirm the payment on your device within {formatCountdown(countdown)}
+              Please confirm the payment on your device within{" "}
+              {formatCountdown(countdown)}
             </p>
           )}
         </form>
@@ -249,4 +261,3 @@ const PaymentModal: React.FC<PaymentModalProps> = ({
 };
 
 export default PaymentModal;
-
