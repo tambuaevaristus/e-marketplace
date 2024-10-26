@@ -2,7 +2,7 @@ import React from 'react';
 
 import Filter from '@/components/Filter';
 import ProductCard from '@/components/ProductCard';
-import { products, productsSection, } from '@/data/content';
+import { products, productsSection } from '@/data/content';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 import Heading from '@/shared/Heading/Heading';
 
