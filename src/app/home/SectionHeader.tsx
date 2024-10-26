@@ -1,9 +1,7 @@
-import Image from 'next/image';
 import React from 'react';
 
 import PromoTag from '@/components/PromoTag';
 import { headerSection } from '@/data/content';
-import shoe_box from '@/images/shoe_box.png';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 
 const SectionHeader = () => {
@@ -14,19 +12,13 @@ const SectionHeader = () => {
           <h4 className="mb-5 text-xl font-medium text-primary">
             {headerSection.title}
           </h4>
-          <h1
-            className="text-[50px] font-medium tracking-tight"
-            style={{ lineHeight: '1em' }}
-          >
-            {headerSection.heading}
+          <h1 className="text-[50px] font-medium tracking-tight">
+            Affordable Shopping, Profitable Selling!
           </h1>
-          <p className="my-10 w-[80%] text-neutral-500">
-            {headerSection.description}
+          <p className="my-10 w-4/5 text-neutral-500">
+            Shop unique items or turn your passion into income.
           </p>
           <ButtonPrimary sizeClass="px-5 py-4">View Product</ButtonPrimary>
-        </div>
-        <div className="basis-[37%]">
-          <Image src={shoe_box} alt="shoe box" className="w-full" />
         </div>
       </div>
 

@@ -2,8 +2,8 @@ import type { StaticImageData } from 'next/image';
 
 export type ProductType = {
   slug: string;
-  shoeName: string;
-  shoeCategory: string;
+  productName: string;
+  category: string;
   coverImage: StaticImageData | string;
   currentPrice: number;
   previousPrice: number;

@@ -2,12 +2,12 @@
 
 import React from 'react';
 
-import { shoes } from '@/data/content';
+import { products } from '@/data/content';
 import Slider from '@/shared/Slider/Slider';
 
 import ProductCard from './ProductCard';
 
-const data = shoes.slice(3, 9);
+const data = products.slice(3, 9);
 
 const ProductSlider = () => {
   return (

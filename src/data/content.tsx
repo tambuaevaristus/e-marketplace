@@ -130,6 +130,310 @@ export const promotionTag = {
     'Join the sneaker fest 2023 on 23 October. We have more fun gigs too and supported by FootWear!.',
 };
 
+export const products = [
+  {
+    slug: 'classicSummerDress',
+    productName: 'Classic Summer Dress',
+    coverImage:
+      'https://m.media-amazon.com/images/I/71R--tqQAML._AC_SX466_.jpg',
+    currentPrice: 59,
+    previousPrice: 79,
+    category: "Women's Clothing",
+    rating: 4.6,
+    reviews: 120,
+    pieces_sold: 1400,
+    justIn: true,
+    shots: [
+      'https://m.media-amazon.com/images/I/71R--tqQAML._AC_SX466_.jpg',
+      shot1,
+      shot2,
+      shot3,
+    ],
+    overview:
+      'This lightweight summer dress is perfect for sunny days and casual outings. Made with breathable fabric, it combines comfort and style effortlessly.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $50 Disc 15%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '5 - 10 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Eco-friendly Packaging',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '15 - 20 October 23',
+      },
+    ],
+  },
+  {
+    slug: 'organicAlmondButter',
+    productName: 'Organic Almond Butter',
+    coverImage:
+      'https://m.media-amazon.com/images/I/51SoX7dW5-S._SX300_SY300_QL70_FMwebp_.jpg',
+    currentPrice: 14,
+    previousPrice: 18,
+    category: 'Grocery',
+    rating: 4.9,
+    reviews: 90,
+    pieces_sold: 350,
+    justIn: false,
+    shots: [
+      'https://m.media-amazon.com/images/I/51SoX7dW5-S._SX300_SY300_QL70_FMwebp_.jpg',
+      shot1,
+      shot2,
+    ],
+    overview:
+      'A creamy, organic almond butter made from premium, sustainably sourced almonds. No added sugars or preservatives.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $10 Disc 5%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '3 - 7 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Recyclable Jar',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '12 - 15 October 23',
+      },
+    ],
+  },
+  {
+    slug: 'smartWatchPro',
+    productName: 'Smart Watch Pro',
+    coverImage:
+      'https://m.media-amazon.com/images/I/71iWc8b-azL._AC_SL1500_.jpg',
+    currentPrice: 249,
+    previousPrice: 299,
+    category: 'Electronics',
+    rating: 4.7,
+    reviews: 230,
+    pieces_sold: 920,
+    justIn: true,
+    shots: [
+      'https://m.media-amazon.com/images/I/71iWc8b-azL._AC_SL1500_.jpg',
+      shot1,
+      shot2,
+      shot3,
+      shot4,
+    ],
+    overview:
+      'A high-tech smartwatch with health monitoring, GPS, and notification alerts. Sleek design perfect for everyday use and workouts.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $200 Disc 15%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '7 - 10 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Luxury Gift Box',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '15 - 20 October 23',
+      },
+    ],
+  },
+  {
+    slug: 'noiseCancellingHeadphones',
+    productName: 'Noise Cancelling Headphones',
+    coverImage:
+      'https://m.media-amazon.com/images/I/51sZFm7L2BL.__AC_SY445_SX342_QL70_FMwebp_.jpg',
+    currentPrice: 159,
+    previousPrice: 199,
+    category: 'Audio Equipment',
+    rating: 4.8,
+    reviews: 180,
+    pieces_sold: 700,
+    justIn: false,
+    shots: [
+      'https://m.media-amazon.com/images/I/51sZFm7L2BL.__AC_SY445_SX342_QL70_FMwebp_.jpg',
+      shot1,
+      shot2,
+    ],
+    overview:
+      'Experience immersive sound with these noise-cancelling headphones, perfect for blocking out distractions and enhancing focus.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $150 Disc 10%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '5 - 9 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Durable Case Included',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '14 - 18 October 23',
+      },
+    ],
+  },
+  {
+    slug: 'fitnessYogaMat',
+    productName: 'Fitness Yoga Mat',
+    coverImage:
+      'https://m.media-amazon.com/images/I/71I2r88GXhL._AC_SL1500_.jpg',
+    currentPrice: 35,
+    previousPrice: 50,
+    category: 'Fitness Equipment',
+    rating: 4.6,
+    reviews: 98,
+    pieces_sold: 450,
+    justIn: true,
+    shots: [
+      'https://m.media-amazon.com/images/I/71I2r88GXhL._AC_SL1500_.jpg',
+      shot1,
+      shot2,
+      shot3,
+    ],
+    overview:
+      'A non-slip yoga mat that provides excellent cushioning and support for your workouts. Lightweight and easy to carry.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $30 Disc 10%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '6 - 8 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Eco-Friendly Packaging',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '16 - 19 October 23',
+      },
+    ],
+  },
+  {
+    slug: 'gamingLaptopPro',
+    productName: 'Gaming Laptop Pro',
+    coverImage:
+      'https://m.media-amazon.com/images/I/61PSDa30RnL._AC_SL1280_.jpg',
+    currentPrice: 1299,
+    previousPrice: 1599,
+    category: 'Computers',
+    rating: 4.9,
+    reviews: 280,
+    pieces_sold: 300,
+    justIn: false,
+    shots: [
+      'https://m.media-amazon.com/images/I/61PSDa30RnL._AC_SL1280_.jpg',
+      shot1,
+      shot2,
+      shot3,
+      shot4,
+    ],
+    overview:
+      'This high-performance gaming laptop is equipped with the latest graphics card and a powerful processor, perfect for gamers and creatives.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $1000 Disc 15%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '8 - 12 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Shock-Resistant Case',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '20 - 25 October 23',
+      },
+    ],
+  },
+  {
+    slug: 'veganProteinPowder',
+    productName: 'Vegan Protein Powder',
+    coverImage:
+      'https://m.media-amazon.com/images/I/8153FufObjL._AC_SL1500_.jpg',
+    currentPrice: 29,
+    previousPrice: 35,
+    category: 'Health & Wellness',
+    rating: 4.7,
+    reviews: 110,
+    pieces_sold: 550,
+    justIn: true,
+    shots: [
+      'https://m.media-amazon.com/images/I/8153FufObjL._AC_SL1500_.jpg',
+      shot1,
+      shot2,
+    ],
+    overview:
+      'A plant-based protein powder ideal for vegans and vegetarians. Great for smoothies, shakes, and post-workout recovery.',
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: 'Discount',
+        description: '> $20 Disc 10%',
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: 'Delivery Time',
+        description: '4 - 8 Working days',
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: 'Package',
+        description: 'Eco-Friendly Canister',
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: 'Estimated Arrival',
+        description: '15 - 18 October 23',
+      },
+    ],
+  },
+  // Add additional 8 products following this format
+];
+
 export const shoes = [
   {
     slug: 'airForce1',

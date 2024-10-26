@@ -35,14 +35,16 @@ const ProductCard: FC<ProductCardProps> = ({
         >
           <Image
             src={product.coverImage}
-            alt={`${product.shoeName} cover photo`}
-            className="h-full w-full object-cover object-bottom"
+            alt={`${product.productName} cover photo`}
+            width={100}
+            height={100}
+            className="size-full object-cover object-bottom"
           />
         </Link>
       </div>
       <div className="mt-3">
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold">{product.shoeName}</h3>
+          <h3 className="font-semibold">{product.productName}</h3>
           <p
             className={`text-neutral-500 ${
               showPrevPrice ? 'block' : 'hidden'
@@ -53,9 +55,9 @@ const ProductCard: FC<ProductCardProps> = ({
         </div>
 
         <div className="flex items-center justify-between">
-          <p className="text-sm text-neutral-500">{product.shoeCategory}</p>
+          <p className="text-sm text-neutral-500">{product.category}</p>
           <p className="text-lg font-medium text-primary">
-            ${product.currentPrice}
+            {product.currentPrice} FCFA
           </p>
         </div>
       </div>
