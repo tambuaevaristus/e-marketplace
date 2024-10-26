@@ -45,7 +45,9 @@ const AccountScreen = () => {
   const renderDebtDetailsModal = () => (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="w-3/4 max-w-lg rounded-lg bg-white p-5 shadow-lg">
-        <h3 className="mb-4 text-lg font-semibold">Arrears Transaction Details</h3>
+        <h3 className="mb-4 text-lg font-semibold">
+          Arrears Transaction Details
+        </h3>
         <ul className="space-y-2">
           <li className="rounded bg-neutral-100 p-3">
             Transaction 1 - 250 XAF
@@ -145,7 +147,9 @@ const AccountScreen = () => {
           <div>
             <h3 className="text-lg font-semibold">Arrears Status</h3>
             <p className={`text-sm ${debtStatusColor}`}>
-              {hasDebt ? `Outstanding balance: ${debtAmount} XAF` : "No outstanding balance"}
+              {hasDebt
+                ? `Outstanding balance: ${debtAmount} XAF`
+                : "No outstanding balance"}
             </p>
           </div>
           {hasDebt && (
