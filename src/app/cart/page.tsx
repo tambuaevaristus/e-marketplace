@@ -5,7 +5,7 @@ import { MdStar } from 'react-icons/md';
 import { TbBrandPaypal } from 'react-icons/tb';
 
 import LikeButton from '@/components/LikeButton';
-import { products, shoes } from '@/data/content';
+import { products, } from '@/data/content';
 import type { ProductType } from '@/data/types';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 import ButtonSecondary from '@/shared/Button/ButtonSecondary';

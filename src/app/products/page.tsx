@@ -4,7 +4,7 @@ import { MdOutlineFilterList, MdSearch } from 'react-icons/md';
 
 import ProductCard from '@/components/ProductCard';
 import SidebarFilters from '@/components/SideBarFilter';
-import { products, shoes } from '@/data/content';
+import { products } from '@/data/content';
 import ButtonSecondary from '@/shared/Button/ButtonSecondary';
 import Input from '@/shared/Input/Input';
 
