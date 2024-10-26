@@ -8,7 +8,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 import { FaBagShopping } from 'react-icons/fa6';
 import { MdClose, MdStar } from 'react-icons/md';
 
-import { shoes } from '@/data/content';
+import { products, shoes } from '@/data/content';
 import type { ProductType } from '@/data/types';
 import ButtonCircle3 from '@/shared/Button/ButtonCircle3';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
@@ -25,16 +25,16 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
   const handleCloseMenu = () => setIsVisable(false);
 
   const renderProduct = (item: ProductType) => {
-    const { shoeName, coverImage, currentPrice, slug, rating, shoeCategory } =
+    const { productName, coverImage, currentPrice, slug, rating, category } =
       item;
 
     return (
-      <div key={shoeName} className="flex py-5 last:pb-0">
+      <div key={productName} className="flex py-5 last:pb-0">
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl">
           <Image
             fill
             src={coverImage}
-            alt={shoeName}
+            alt={productName}
             className="h-full w-full object-contain object-center"
           />
           <Link
@@ -50,11 +50,11 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
               <div>
                 <h3 className="font-medium ">
                   <Link onClick={handleCloseMenu} href={`/products/${slug}`}>
-                    {shoeName}
+                    {productName}
                   </Link>
                 </h3>
                 <span className="my-1 text-sm text-neutral-500">
-                  {shoeCategory}
+                  {category}
                 </span>
                 <div className="flex items-center gap-1">
                   <MdStar className="text-yellow-400" />
@@ -107,7 +107,7 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
                         </ButtonCircle3>
                       </div>
                       <div className="divide-y divide-neutral-300">
-                        {shoes.slice(0, 2).map((item) => renderProduct(item))}
+                        {products.slice(0, 2).map((item) => renderProduct(item))}
                       </div>
                     </div>
                     <div className="absolute bottom-0 left-0 w-full bg-neutral-50 p-5">

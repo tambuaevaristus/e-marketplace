@@ -5,23 +5,23 @@ import { MdStar } from 'react-icons/md';
 import { TbBrandPaypal } from 'react-icons/tb';
 
 import LikeButton from '@/components/LikeButton';
-import { shoes } from '@/data/content';
+import { products, shoes } from '@/data/content';
 import type { ProductType } from '@/data/types';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 import ButtonSecondary from '@/shared/Button/ButtonSecondary';
 import InputNumber from '@/shared/InputNumber/InputNumber';
 
 const renderProduct = (item: ProductType) => {
-  const { shoeName, coverImage, currentPrice, slug, rating, shoeCategory } =
+  const { productName, coverImage, currentPrice, slug, rating, category } =
     item;
 
   return (
-    <div key={shoeName} className="flex py-5 last:pb-0">
+    <div key={productName} className="flex py-5 last:pb-0">
       <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl md:h-40 md:w-40">
         <Image
           fill
           src={coverImage}
-          alt={shoeName}
+          alt={productName}
           className="h-full w-full object-contain object-center"
         />
         <Link className="absolute inset-0" href={`/products/${slug}`} />
@@ -32,10 +32,10 @@ const renderProduct = (item: ProductType) => {
           <div className="flex justify-between ">
             <div>
               <h3 className="font-medium md:text-2xl ">
-                <Link href={`/products/${slug}`}>{shoeName}</Link>
+                <Link href={`/products/${slug}`}>{productName}</Link>
               </h3>
               <span className="my-1 text-sm text-neutral-500">
-                {shoeCategory}
+                {category}
               </span>
               <div className="flex items-center gap-1">
                 <MdStar className="text-yellow-400" />
@@ -73,7 +73,7 @@ const CartPage = () => {
 
         <div className="flex flex-col lg:flex-row">
           <div className="w-full divide-y divide-neutral-300 lg:w-[60%] xl:w-[55%]">
-            {shoes.slice(0, 3).map((item) => renderProduct(item))}
+            {products.slice(0, 3).map((item) => renderProduct(item))}
           </div>
           <div className="my-10 shrink-0 border-t border-neutral-300 lg:mx-10 lg:my-0 lg:border-l lg:border-t-0 xl:mx-16 2xl:mx-20" />
           <div className="flex-1">
