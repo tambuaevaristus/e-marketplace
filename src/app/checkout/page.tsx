@@ -7,7 +7,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 import { MdStar } from 'react-icons/md';
 
 import LikeButton from '@/components/LikeButton';
-import { shoes } from '@/data/content';
+import { products } from '@/data/content';
 import type { ProductType } from '@/data/types';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 import Input from '@/shared/Input/Input';
@@ -30,16 +30,16 @@ const CheckoutPage = () => {
   };
 
   const renderProduct = (item: ProductType) => {
-    const { shoeName, coverImage, currentPrice, slug, rating, shoeCategory } =
+    const { productName, coverImage, currentPrice, slug, rating, category } =
       item;
 
     return (
-      <div key={shoeName} className="flex py-5 last:pb-0">
+      <div key={productName} className="flex py-5 last:pb-0">
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl md:h-40 md:w-40">
           <Image
             fill
             src={coverImage}
-            alt={shoeName}
+            alt={productName}
             className="h-full w-full object-contain object-center"
           />
           <Link className="absolute inset-0" href={`/products/${slug}`} />
@@ -50,10 +50,10 @@ const CheckoutPage = () => {
             <div className="flex justify-between ">
               <div>
                 <h3 className="font-medium md:text-2xl ">
-                  <Link href={`/products/${slug}`}>{shoeName}</Link>
+                  <Link href={`/products/${slug}`}>{productName}</Link>
                 </h3>
                 <span className="my-1 text-sm text-neutral-500">
-                  {shoeCategory}
+                  {category}
                 </span>
                 <div className="flex items-center gap-1">
                   <MdStar className="text-yellow-400" />
@@ -139,7 +139,7 @@ const CheckoutPage = () => {
           <div className="w-full lg:w-[36%] ">
             <h3 className="text-lg font-semibold">Order summary</h3>
             <div className="mt-8 divide-y divide-neutral-300">
-              {shoes.slice(0, 3).map((item) => renderProduct(item))}
+              {products.slice(0, 3).map((item) => renderProduct(item))}
             </div>
 
             <div className="mt-10 border-t border-neutral-300 pt-6 text-sm">
