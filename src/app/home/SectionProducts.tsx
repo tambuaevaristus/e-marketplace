@@ -2,7 +2,7 @@ import React from 'react';
 
 import Filter from '@/components/Filter';
 import ProductCard from '@/components/ProductCard';
-import { productsSection, shoes } from '@/data/content';
+import { products, productsSection, shoes } from '@/data/content';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 import Heading from '@/shared/Heading/Heading';
 
@@ -15,9 +15,9 @@ const SectionProducts = () => {
       <Filter />
 
       <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-        {shoes.map((shoe) => (
+        {products.map((shoe) => (
           <ProductCard
-            key={shoe.shoeName}
+            key={shoe.productName}
             product={shoe}
             className="border-neutral-300"
           />
