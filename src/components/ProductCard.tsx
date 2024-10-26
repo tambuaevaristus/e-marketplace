@@ -1,4 +1,5 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import Link from 'next/link';
 import type { FC } from 'react';
 import React from 'react';
@@ -33,12 +34,10 @@ const ProductCard: FC<ProductCardProps> = ({
           className="h-[250px] w-full lg:h-[220px]"
           href={`/products/${product.slug}`}
         >
-          <Image
+          <img
             src={product.coverImage}
             alt={`${product.productName} cover photo`}
-            width={100}
-            height={100}
-            className="size-full object-cover object-bottom"
+            className="size-full object-contain object-bottom"
           />
         </Link>
       </div>
@@ -50,7 +49,7 @@ const ProductCard: FC<ProductCardProps> = ({
               showPrevPrice ? 'block' : 'hidden'
             } text-sm line-through`}
           >
-            ${product.previousPrice}
+            {product.previousPrice}FCFA
           </p>
         </div>
 

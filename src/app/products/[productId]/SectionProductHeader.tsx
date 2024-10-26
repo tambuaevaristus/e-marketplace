@@ -9,8 +9,6 @@ import { MdStar } from 'react-icons/md';
 import { PiSealCheckFill } from 'react-icons/pi';
 
 import ImageShowCase from '@/components/ImageShowCase';
-import ShoeSizeButton from '@/components/ShoeSizeButton';
-import { shoeSizes } from '@/data/content';
 import nike_profile from '@/images/nike_profile.jpg';
 import ButtonCircle3 from '@/shared/Button/ButtonCircle3';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
@@ -42,7 +40,7 @@ const SectionProductHeader: FC<SectionProductHeaderProps> = ({
         <ImageShowCase shots={shots} />
       </div>
 
-      <div className="basis-[45%]">
+      <div className="basis-[45%] px-10">
         <Heading className="mb-0" isMain title="new arrival!">
           {shoeName}
         </Heading>
@@ -75,28 +73,31 @@ const SectionProductHeader: FC<SectionProductHeaderProps> = ({
         </div>
 
         <div className="mb-5 space-y-1">
-          <p className="text-neutral-500 line-through">${prevPrice}</p>
-          <h1 className="text-3xl font-medium">${currentPrice}</h1>
+          <p className="text-neutral-500 line-through">{prevPrice}FCFA</p>
+          <h1 className="text-3xl font-medium">{currentPrice}FCFA</h1>
         </div>
 
-        <div className="mb-5 flex items-end justify-between">
-          <p className="text-xl">Available sizes</p>
-          <p className="flex items-center gap-1 text-sm text-neutral-500">
-            Size guide <LuInfo />
-          </p>
-        </div>
 
-        <div className="grid grid-cols-3 gap-3">
-          {shoeSizes.map((size) => (
-            <ShoeSizeButton key={size} size={size} />
-          ))}
-        </div>
+        
+       
 
+      
         <div className="mt-5 flex items-center gap-5">
           <ButtonPrimary className="w-full">Buy Now</ButtonPrimary>
           <ButtonSecondary className="flex w-full items-center gap-1 border-2 border-primary text-primary">
             <BsBag /> Add to cart
           </ButtonSecondary>
+        </div>
+
+        <div className="my-10 flex items-end justify-between">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27109.07078416831!2d9.266656149999998!3d4.158704950000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061318cda977e19%3A0xbc804daf08362334!2sNjeiforbi%20Complex%20Buea!5e1!3m2!1sen!2scm!4v1729949353317!5m2!1sen!2scm"
+            width="600"
+            height="450"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
