@@ -115,6 +115,11 @@ export const NavLinks: NavItemType[] = [
     name: 'Cart',
     href: '/cart',
   },
+  {
+    id: 'aijgay',
+    name: "Transactions",
+    href: '/transactions'
+  }
 ];
 
 export const headerSection = {
