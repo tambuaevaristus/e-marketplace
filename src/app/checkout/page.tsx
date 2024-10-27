@@ -90,10 +90,7 @@ const CheckoutPage = () => {
             <div>
               <InputNumber
                 quantity={quantity}
-                onChange={(newQuantity) =>
-                  handleQuantityChange(name, newQuantity)
-                }
-                item={undefined}
+                onChange={(newQuantity) => handleQuantityChange(name, newQuantity)} item={undefined as any}                // item={undefined}
               />{" "}
             </div>
           </div>

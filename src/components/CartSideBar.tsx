@@ -74,7 +74,7 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
               onChange={(newQuantity) =>
                 handleQuantityChange(name, newQuantity)
               }
-              item={undefined}
+              item={undefined as any}
             />
           </div>
         </div>
