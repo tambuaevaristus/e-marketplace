@@ -10,7 +10,7 @@ const SectionProducts = () => {
   return (
     <div className="container">
       <Heading isCenter isMain desc={productsSection.description}>
-Shop Now, Pay Later
+        Shop Now, Pay Later
       </Heading>
       <Filter />
 
