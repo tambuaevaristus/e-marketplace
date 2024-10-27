@@ -7,9 +7,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
 import FormItem from "@/shared/FormItem";
-import Input from "@/shared/Input/Input";
 import Radio from "@/shared/Radio/Radio";
-import Select from "@/shared/Select/Select";
 
 interface Props {
   isActive: boolean;
@@ -18,9 +16,7 @@ interface Props {
 }
 
 const ShippingAddress: FC<Props> = ({
-  isActive,
   onCloseActive,
-  onOpenActive,
 }) => {
   return (
     <div className="rounded-xl border border-neutral-300 ">
