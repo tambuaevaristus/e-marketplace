@@ -3,7 +3,6 @@
 import type { FC } from 'react';
 import React, { useState } from 'react';
 
-import { note } from '@/data/content';
 import ButtonCircle3 from '@/shared/Button/ButtonCircle3';
 import Heading from '@/shared/Heading/Heading';
 

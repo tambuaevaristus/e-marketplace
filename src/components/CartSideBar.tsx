@@ -2,7 +2,6 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState, useEffect } from "react";
-import { AiOutlineDelete } from "react-icons/ai";
 import { FaBagShopping } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
 
@@ -11,7 +10,6 @@ import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
 import InputNumber from "@/shared/InputNumber/InputNumber";
 
-import LikeButton from "./LikeButton";
 import { clearCart } from "@/utils/useCart";
 
 interface CartItem {

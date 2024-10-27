@@ -3,7 +3,6 @@ import React from 'react';
 
 import { products } from '@/data/content';
 
-import SectionMoreProducts from './SectionMoreProducts';
 import SectionNavigation from './SectionNavigation';
 import SectionProductHeader from './SectionProductHeader';
 import SectionProductInfo from './SectionProductInfo';

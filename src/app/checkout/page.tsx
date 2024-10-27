@@ -1,16 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineDelete } from "react-icons/ai";
-import { MdStar } from "react-icons/md";
 
 import LikeButton from "@/components/LikeButton";
-import { shoes } from "@/data/content";
-import type { ProductType } from "@/data/types";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
-import Input from "@/shared/Input/Input";
 import InputNumber from "@/shared/InputNumber/InputNumber";
 
 import ContactInfo from "./ContactInfo";

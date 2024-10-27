@@ -12,7 +12,7 @@ interface BrandCardProps {
   reviews: number;
   followers: number;
   visitLink: string;
-  logo: StaticImageData;
+  logo: string;
   shoes: StaticImageData[];
 }
 

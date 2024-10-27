@@ -1,17 +1,12 @@
 "use client";
 import type { StaticImageData } from "next/image";
 import type { FC } from "react";
-import { useState, useEffect } from "react";
 
 import React from "react";
 import { BsBag } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
-import { LuInfo } from "react-icons/lu";
 import { MdStar } from "react-icons/md";
-import { PiSealCheckFill } from "react-icons/pi";
 import ImageShowCase from "@/components/ImageShowCase";
-import nike_profile from "@/images/nike_profile.jpg";
-import ButtonCircle3 from "@/shared/Button/ButtonCircle3";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
 import Heading from "@/shared/Heading/Heading";
@@ -108,10 +103,8 @@ const SectionProductHeader: FC<SectionProductHeaderProps> = ({
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27109.07078416831!2d9.266656149999998!3d4.158704950000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1061318cda977e19%3A0xbc804daf08362334!2sNjeiforbi%20Complex%20Buea!5e1!3m2!1sen!2scm!4v1729949353317!5m2!1sen!2scm"
             width="600"
             height="450"
-            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </div>
       </div>
     </div>
