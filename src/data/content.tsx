@@ -113,10 +113,10 @@ export const NavLinks: NavItemType[] = [
     href: "/cart",
   },
   {
-    id: 'aijgay',
+    id: "aijgay",
     name: "Transactions",
-    href: '/transactions'
-  }
+    href: "/transactions",
+  },
 ];
 
 export const headerSection = {
@@ -173,6 +173,90 @@ export const products = [
         icon: <FaTruckFast className="text-xl text-secondary" />,
         title: "Estimated Arrival",
         description: "15 - 20 October 23",
+      },
+    ],
+  },
+
+  {
+    slug: "ndopRice",
+    productName: "Ndop Rice",
+    coverImage:
+      "https://buyamsalam.com/wp-content/uploads/2021/03/riz-ndop_rice_simple_25kg-300x300-1.jpg",
+    currentPrice: 20000,
+    previousPrice: 50000,
+    category: "Food",
+    rating: 4.8,
+    reviews: 230,
+    pieces_sold: 1200,
+    justIn: false,
+    shots: [
+      "https://example.com/ndop-rice-shot1.jpg",
+      "https://example.com/ndop-rice-shot2.jpg",
+    ],
+    overview:
+      "Locally sourced Ndop rice, known for its high quality and delicious taste. Perfect for family meals and special occasions.",
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: "Discount",
+        description: "> $20 Disc 5%",
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: "Delivery Time",
+        description: "3 - 5 Working days",
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: "Package",
+        description: "Sealed in airtight packaging for freshness",
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: "Estimated Arrival",
+        description: "25 - 27 October 23",
+      },
+    ],
+  },
+  {
+    slug: "bedLuxuryComfort",
+    productName: "Luxury Comfort Bed",
+    coverImage:
+      "https://zimcompass.ap-south-1.linodeobjects.com/zimcompass-product_5374638434784216412909.jpg",
+    currentPrice: 70000,
+    previousPrice: 85000,
+    category: "Furniture",
+    rating: 4.7,
+    reviews: 150,
+    pieces_sold: 340,
+    justIn: true,
+    shots: [
+      "https://zimcompass.ap-south-1.linodeobjects.com/zimcompass-product_5374638434784216412909.jpg",
+      "https://example.com/luxury-bed-shot2.jpg",
+      "https://example.com/luxury-bed-shot3.jpg",
+    ],
+    overview:
+      "Elegant and comfortable bed with premium materials. Offers excellent support for a restful night's sleep.",
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: "Discount",
+        description: "> $50 Disc 15%",
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: "Delivery Time",
+        description: "10 - 15 Working days",
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: "Package",
+        description: "Eco-Friendly and durable packaging",
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: "Estimated Arrival",
+        description: "30 October - 5 November 23",
       },
     ],
   },
@@ -266,8 +350,8 @@ export const products = [
     productName: "Smart Watch Pro",
     coverImage:
       "https://m.media-amazon.com/images/I/71iWc8b-azL._AC_SL1500_.jpg",
-    currentPrice: 249,
-    previousPrice: 299,
+    currentPrice: 15000,
+    previousPrice: 16000,
     category: "Electronics",
     rating: 4.7,
     reviews: 230,
@@ -310,8 +394,8 @@ export const products = [
     productName: "Noise Cancelling Headphones",
     coverImage:
       "https://m.media-amazon.com/images/I/51sZFm7L2BL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
-    currentPrice: 159,
-    previousPrice: 199,
+    currentPrice: 12000,
+    previousPrice: 15000,
     category: "Audio Equipment",
     rating: 4.8,
     reviews: 180,
@@ -352,8 +436,8 @@ export const products = [
     productName: "Fitness Yoga Mat",
     coverImage:
       "https://m.media-amazon.com/images/I/71I2r88GXhL._AC_SL1500_.jpg",
-    currentPrice: 35,
-    previousPrice: 50,
+    currentPrice: 3000,
+    previousPrice: 3500,
     category: "Fitness Equipment",
     rating: 4.6,
     reviews: 98,
@@ -395,8 +479,8 @@ export const products = [
     productName: "Gaming Laptop Pro",
     coverImage:
       "https://m.media-amazon.com/images/I/61PSDa30RnL._AC_SL1280_.jpg",
-    currentPrice: 1299,
-    previousPrice: 1599,
+    currentPrice: 450000,
+    previousPrice: 500000,
     category: "Computers",
     rating: 4.9,
     reviews: 280,
@@ -439,8 +523,8 @@ export const products = [
     productName: "Vegan Protein Powder",
     coverImage:
       "https://m.media-amazon.com/images/I/8153FufObjL._AC_SL1500_.jpg",
-    currentPrice: 29,
-    previousPrice: 35,
+    currentPrice: 9000,
+    previousPrice: 10000,
     category: "Health & Wellness",
     rating: 4.7,
     reviews: 110,
@@ -950,6 +1034,14 @@ const categories = [
   "Electronics",
 ];
 
+const shops = [
+  "Shops",
+  "Njiefobi Supper market",
+  "Afumbom Super market",
+  "MAMA es bAKERY",
+  " TFC Buea",
+];
+
 // const sizes = ['Size', 'S', 'M', 'L', 'XL', 'XXl'];
 const locations = ["Location", "Buea", "Douala", "Limbe", "Yaounde", "Bamenda"];
 const prices = [
@@ -960,7 +1052,7 @@ const prices = [
   "Above 50k FCFA",
 ];
 
-export const filters = [categories, prices, locations];
+export const filters = [categories, prices, locations, shops];
 
 export const brandsSection = {
   heading: "The Official Store of The Amazing Brand",

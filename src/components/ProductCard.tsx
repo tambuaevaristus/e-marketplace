@@ -29,18 +29,19 @@ const ProductCard: FC<ProductCardProps> = ({
           </div>
         )}
         <LikeButton className="absolute right-2 top-2" />
-        <Link href={`/products/${product.slug}`} className="block h-full w-full">
+        <Link href={`/products/${product.slug}`} className="block">
           <Image
             src={product.coverImage}
             alt={`${product.productName} cover photo`}
-            layout="fill"
+            width={600}
+            height={600}
             objectFit="contain"
             objectPosition="bottom"
-            className="rounded-2xl"
+            className="rounded-2xl mx-auto p-5"
           />
         </Link>
       </div>
-      <div className="mt-3">
+      <div className="mt-3 z-10 ">
         <div className="flex items-center justify-between">
           <h3 className="font-semibold">{product.productName}</h3>
           <p
