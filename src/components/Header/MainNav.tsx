@@ -35,8 +35,15 @@ const MainNav = () => {
           <FaRegBell className="text-2xl" />
         </div> */}
 
-        <div className="flex items-center divide-x divide-neutral-300">
+        <div className="flex items-center divide-x gap-4 divide-neutral-300">
           <CartSideBar />
+          {/* <div>
+            
+          </div> */}
+
+          <div className='h-10 items-center justify-center hidden md:flex px-2'>
+            <Link href={"/transactions"} className='text-primary underline'>Transactions</Link>
+          </div>
           <div className="flex items-center gap-2 pl-5">
             <ButtonCircle3 className="overflow-hidden bg-gray" size="w-10 h-10">
               <Image
