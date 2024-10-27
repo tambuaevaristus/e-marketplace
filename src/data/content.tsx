@@ -25,13 +25,7 @@ import new_balance3 from "@/images/new_balance3.webp";
 import new_balance4 from "@/images/new_balance4.webp";
 import nike_blazer from "@/images/nike_blazer.webp";
 import redlow from "@/images/redlow.webp";
-import shot1 from "@/images/shots/shot1.webp";
-import shot2 from "@/images/shots/shot2.webp";
-import shot3 from "@/images/shots/shot3.jpeg";
-import shot4 from "@/images/shots/shot4.jpeg";
-import shot5 from "@/images/shots/shot5.webp";
-import shot6 from "@/images/shots/shot6.jpeg";
-import shot7 from "@/images/shots/shot7.webp";
+
 import slides from "@/images/slides.webp";
 import yellowLow from "@/images/yellowLow.webp";
 
@@ -111,9 +105,7 @@ export const products = [
     justIn: true,
     shots: [
       "https://m.media-amazon.com/images/I/71R--tqQAML._AC_SX466_.jpg",
-      shot1,
-      shot2,
-      shot3,
+   
     ],
     overview:
       "This lightweight summer dress is perfect for sunny days and casual outings. Made with breathable fabric, it combines comfort and style effortlessly.",
@@ -238,9 +230,7 @@ export const products = [
     justIn: false,
     shots: [
       "https://dailytrust.com/wp-content/uploads/2022/10/Gas-Cylinder-1-768x480.webp",
-      shot1,
-      shot2,
-      shot3,
+    
     ],
     overview:
       "This lightweight summer dress is perfect for sunny days and casual outings. Made with breathable fabric, it combines comfort and style effortlessly.",
@@ -281,8 +271,7 @@ export const products = [
     justIn: false,
     shots: [
       "https://m.media-amazon.com/images/I/51SoX7dW5-S._SX300_SY300_QL70_FMwebp_.jpg",
-      shot1,
-      shot2,
+   
     ],
     overview:
       "A creamy, organic almond butter made from premium, sustainably sourced almonds. No added sugars or preservatives.",
@@ -323,10 +312,7 @@ export const products = [
     justIn: true,
     shots: [
       "https://m.media-amazon.com/images/I/71iWc8b-azL._AC_SL1500_.jpg",
-      shot1,
-      shot2,
-      shot3,
-      shot4,
+  
     ],
     overview:
       "A high-tech smartwatch with health monitoring, GPS, and notification alerts. Sleek design perfect for everyday use and workouts.",
@@ -367,8 +353,7 @@ export const products = [
     justIn: false,
     shots: [
       "https://m.media-amazon.com/images/I/51sZFm7L2BL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
-      shot1,
-      shot2,
+   
     ],
     overview:
       "Experience immersive sound with these noise-cancelling headphones, perfect for blocking out distractions and enhancing focus.",
@@ -409,9 +394,7 @@ export const products = [
     justIn: true,
     shots: [
       "https://m.media-amazon.com/images/I/71I2r88GXhL._AC_SL1500_.jpg",
-      shot1,
-      shot2,
-      shot3,
+   
     ],
     overview:
       "A non-slip yoga mat that provides excellent cushioning and support for your workouts. Lightweight and easy to carry.",
@@ -452,11 +435,7 @@ export const products = [
     justIn: false,
     shots: [
       "https://m.media-amazon.com/images/I/61PSDa30RnL._AC_SL1280_.jpg",
-      shot1,
-      shot2,
-      shot3,
-      shot4,
-    ],
+       ],
     overview:
       "This high-performance gaming laptop is equipped with the latest graphics card and a powerful processor, perfect for gamers and creatives.",
     shipment_details: [
@@ -496,8 +475,6 @@ export const products = [
     justIn: true,
     shots: [
       "https://m.media-amazon.com/images/I/8153FufObjL._AC_SL1500_.jpg",
-      shot1,
-      shot2,
     ],
     overview:
       "A plant-based protein powder ideal for vegans and vegetarians. Great for smoothies, shakes, and post-workout recovery.",
@@ -539,7 +516,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [airForce1, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [airForce1],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -576,7 +553,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: true,
-    shots: [blackLebron, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [blackLebron],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -613,7 +590,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [brownsb, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [brownsb],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -650,7 +627,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [brsb, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [brsb],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -687,7 +664,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [dunklow, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [dunklow],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -724,7 +701,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [lebronxx, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [lebronxx],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -761,7 +738,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: true,
-    shots: [metcon5, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [metcon5],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -798,7 +775,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [metcon9, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [metcon9],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -835,7 +812,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: true,
-    shots: [nike_blazer, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [nike_blazer],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -872,7 +849,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [redlow, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [redlow],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -909,7 +886,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: false,
-    shots: [slides, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [slides],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
@@ -946,7 +923,7 @@ export const shoes = [
     reviews: 56,
     pieces_sold: 600,
     justIn: true,
-    shots: [yellowLow, shot1, shot2, shot3, shot4, shot5, shot6, shot7],
+    shots: [yellowLow],
     overview:
       "When your workouts wade into the nitty gritty, the Nike Free Metcon 5 can meet you in the depths, help you dig deep to find that final ounce of force and come out of the other side on a high. It matches style with substance, forefoot flexibility with backend stability, perfect for flying through a cardio day or enhancing your agility. A revamped upper offers easier entry with a collar made just for your ankle.",
     shipment_details: [
