@@ -175,7 +175,7 @@ export const products = [
     ],
   },
   {
-    slug: "Cooking Gas",
+    slug: "CookingGas",
     productName: "Cooking Gas",
     coverImage:
       "https://dailytrust.com/wp-content/uploads/2022/10/Gas-Cylinder-1-768x480.webp",

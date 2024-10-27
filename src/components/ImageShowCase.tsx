@@ -19,7 +19,7 @@ const ImageShowCase: FC<ImageShowCaseProps> = ({ shots }) => {
     <div className="space-y-3 rounded-2xl border border-neutral-300 p-2">
       <div className="relative overflow-hidden rounded-2xl md:h-[520px]">
         <LikeButton className="absolute right-5 top-5" />
-        <Image
+        <img
           src={pathOr('', [activeImageIndex], shots)}
           alt="shoe image"
           className="h-full w-full object-cover object-center"
@@ -38,7 +38,7 @@ const ImageShowCase: FC<ImageShowCaseProps> = ({ shots }) => {
               type="button"
               onClick={() => setActiveImageIndex(index)}
             >
-              <Image
+              <img
                 src={shot}
                 alt="shoe image"
                 className="h-full w-full object-cover object-center"

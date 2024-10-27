@@ -1,77 +1,77 @@
-'use client';
+"use client";
 
-import { Dialog, Transition } from '@headlessui/react';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { Fragment, useState } from 'react';
-import { AiOutlineDelete } from 'react-icons/ai';
-import { FaBagShopping } from 'react-icons/fa6';
-import { MdClose, MdStar } from 'react-icons/md';
+import { Dialog, Transition } from "@headlessui/react";
+import React, { Fragment, useState, useEffect } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
+import { FaBagShopping } from "react-icons/fa6";
+import { MdClose } from "react-icons/md";
 
-import { shoes } from '@/data/content';
-import type { ProductType } from '@/data/types';
-import ButtonCircle3 from '@/shared/Button/ButtonCircle3';
-import ButtonPrimary from '@/shared/Button/ButtonPrimary';
-import ButtonSecondary from '@/shared/Button/ButtonSecondary';
-import InputNumber from '@/shared/InputNumber/InputNumber';
+import ButtonCircle3 from "@/shared/Button/ButtonCircle3";
+import ButtonPrimary from "@/shared/Button/ButtonPrimary";
+import ButtonSecondary from "@/shared/Button/ButtonSecondary";
+import InputNumber from "@/shared/InputNumber/InputNumber";
 
-import LikeButton from './LikeButton';
+import LikeButton from "./LikeButton";
+import { clearCart } from "@/utils/useCart";
+
+interface CartItem {
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
 
 export interface CartSideBarProps {}
+
 const CartSideBar: React.FC<CartSideBarProps> = () => {
-  const [isVisable, setIsVisable] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  const handleOpenMenu = () => setIsVisable(true);
-  const handleCloseMenu = () => setIsVisable(false);
+  useEffect(() => {
+    const storedCart = localStorage.getItem("@cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart) as CartItem[]);
+    }
+  }, []);
 
-  const renderProduct = (item: ProductType) => {
-    const { shoeName, coverImage, currentPrice, slug, rating, shoeCategory } =
-      item;
+  const handleOpenMenu = () => setIsVisible(true);
+  const handleCloseMenu = () => setIsVisible(false);
+
+  // Calculate subtotal based on cart items
+  const calculateSubtotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  // Update quantity for a cart item and recalculate subtotal
+  const handleQuantityChange = (name: string, newQuantity: number) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.name === name ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
+  const renderProduct = (item: CartItem) => {
+    const { name, image, price, quantity } = item;
 
     return (
-      <div key={shoeName} className="flex py-5 last:pb-0">
+      <div key={name} className="flex py-5 last:pb-0">
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl">
-          <Image
-            fill
-            src={coverImage}
-            alt={shoeName}
+          <img
+            src={image}
+            alt={name}
             className="h-full w-full object-contain object-center"
           />
-          <Link
-            onClick={handleCloseMenu}
-            className="absolute inset-0"
-            href={`/products/${slug}`}
-          />
         </div>
-
         <div className="ml-4 flex flex-1 flex-col justify-between">
-          <div>
-            <div className="flex justify-between ">
-              <div>
-                <h3 className="font-medium ">
-                  <Link onClick={handleCloseMenu} href={`/products/${slug}`}>
-                    {shoeName}
-                  </Link>
-                </h3>
-                <span className="my-1 text-sm text-neutral-500">
-                  {shoeCategory}
-                </span>
-                <div className="flex items-center gap-1">
-                  <MdStar className="text-yellow-400" />
-                  <span className="text-sm">{rating}</span>
-                </div>
-              </div>
-              <span className=" font-medium">${currentPrice}</span>
-            </div>
+          <div className="flex justify-between">
+            <h3 className="font-medium font-bold">{name}</h3>
+            <span className="font-medium">{price} FCFA</span>
           </div>
           <div className="flex w-full items-end justify-between text-sm">
-            <div className="flex items-center gap-3">
-              <LikeButton />
-              <AiOutlineDelete className="text-2xl" />
-            </div>
-            <div>
-              <InputNumber />
-            </div>
+            <InputNumber
+              quantity={quantity}
+              onChange={(newQuantity) => handleQuantityChange(name, newQuantity)} item={undefined}            />
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
 
   const renderContent = () => {
     return (
-      <Transition appear show={isVisable} as={Fragment}>
+      <Transition appear show={isVisible} as={Fragment}>
         <Dialog
           as="div"
           className="fixed inset-0 z-50 overflow-y-auto"
@@ -107,7 +107,7 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
                         </ButtonCircle3>
                       </div>
                       <div className="divide-y divide-neutral-300">
-                        {shoes.slice(0, 2).map((item) => renderProduct(item))}
+                        {cart.map((item) => renderProduct(item))}
                       </div>
                     </div>
                     <div className="absolute bottom-0 left-0 w-full bg-neutral-50 p-5">
@@ -118,7 +118,9 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
                             Shipping and taxes calculated at checkout.
                           </span>
                         </span>
-                        <span className="text-xl font-medium">$597</span>
+                        <span className="text-xl font-medium">
+                          {calculateSubtotal()} FCFA
+                        </span>
                       </p>
                       <div className="mt-5 flex items-center gap-5">
                         <ButtonPrimary
@@ -129,11 +131,10 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
                           Checkout
                         </ButtonPrimary>
                         <ButtonSecondary
-                          onClick={handleCloseMenu}
-                          href="/cart"
+                          onClick={() => clearCart()}
                           className="w-full flex-1 border-2 border-primary text-primary"
                         >
-                          View cart
+                          Clear Cart
                         </ButtonSecondary>
                       </div>
                     </div>
@@ -141,7 +142,6 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
                 </div>
               </div>
             </Transition.Child>
-
             <Transition.Child
               as={Fragment}
               enter=" duration-300"
@@ -167,9 +167,8 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
         className="mx-5 flex items-center gap-1 rounded-full bg-neutral-100 p-2 text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
       >
         <FaBagShopping className="text-2xl" />
-        <span className="hidden text-sm lg:block">3 items</span>
+        <span className="hidden text-sm lg:block">{cart.length} items</span>
       </button>
-
       {renderContent()}
     </>
   );

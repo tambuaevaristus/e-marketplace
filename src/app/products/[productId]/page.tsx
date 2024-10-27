@@ -1,7 +1,7 @@
 import { pathOr } from 'ramda';
 import React from 'react';
 
-import { shoes } from '@/data/content';
+import { products } from '@/data/content';
 
 import SectionMoreProducts from './SectionMoreProducts';
 import SectionNavigation from './SectionNavigation';
@@ -14,7 +14,7 @@ type Props = {
 };
 
 const getProductData = async (id: string) => {
-  const filteredDestination = shoes.find((item) => item.slug === id);
+  const filteredDestination = products.find((item) => item.slug === id);
   return filteredDestination;
 };
 
@@ -28,7 +28,9 @@ const SingleProductPage = async (props: Props) => {
       <div className="mb-20">
         <SectionProductHeader
           shots={pathOr([], ['shots'], selectedProduct)}
-          shoeName={pathOr('', ['shoeName'], selectedProduct)}
+          productName={pathOr('', ['productName'], selectedProduct)}
+          coverImage={pathOr('', ['coverImage'], selectedProduct)}
+          overview={pathOr('', ['overview'], selectedProduct)}
           prevPrice={pathOr(0, ['previousPrice'], selectedProduct)}
           currentPrice={pathOr(0, ['currentPrice'], selectedProduct)}
           rating={pathOr(0, ['rating'], selectedProduct)}
