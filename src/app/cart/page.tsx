@@ -9,7 +9,7 @@ import { products } from "@/data/content";
 import type { ProductType } from "@/data/types";
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
 import ButtonSecondary from "@/shared/Button/ButtonSecondary";
-import InputNumber from "@/shared/InputNumber/InputNumber";
+// import InputNumber from "@/shared/InputNumber/InputNumber";
 
 const renderProduct = (item: ProductType) => {
   const { productName, coverImage, currentPrice, slug, rating, category } =
@@ -49,13 +49,13 @@ const renderProduct = (item: ProductType) => {
             <AiOutlineDelete className="text-2xl" />
           </div>
           <div>
-            <InputNumber
+            {/* <InputNumber
               quantity={quantity}
               onChange={(newQuantity) =>
                 handleQuantityChange(name, newQuantity)
               }
               item={undefined}
-            />{" "}
+            />{" "} */}
           </div>
         </div>
       </div>
