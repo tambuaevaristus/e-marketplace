@@ -49,7 +49,7 @@ const SingleProductPage = async (props: Props) => {
       </div>
 
       <div className="mb-28">
-        <SectionMoreProducts />
+        {/* <SectionMoreProducts /> */}
       </div>
     </div>
   );

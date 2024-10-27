@@ -70,11 +70,6 @@ const ProductInfoTab: FC<ProductInfoTabProps> = ({
           )}
         </div>
       ))}
-
-      <div className="space-y-2">
-        <h3 className="text-xl font-medium">Note*</h3>
-        <p className="text-neutral-500">{note}</p>
-      </div>
     </div>
   );
 };

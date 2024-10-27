@@ -71,7 +71,11 @@ const CartSideBar: React.FC<CartSideBarProps> = () => {
           <div className="flex w-full items-end justify-between text-sm">
             <InputNumber
               quantity={quantity}
-              onChange={(newQuantity) => handleQuantityChange(name, newQuantity)} item={undefined}            />
+              onChange={(newQuantity) =>
+                handleQuantityChange(name, newQuantity)
+              }
+              item={undefined}
+            />
           </div>
         </div>
       </div>

@@ -1,18 +1,18 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { AiOutlineDelete } from 'react-icons/ai';
-import { MdStar } from 'react-icons/md';
-import { TbBrandPaypal } from 'react-icons/tb';
+import Image from "next/image";
+import Link from "next/link";
+import { AiOutlineDelete } from "react-icons/ai";
+import { MdStar } from "react-icons/md";
+import { TbBrandPaypal } from "react-icons/tb";
 
-import LikeButton from '@/components/LikeButton';
-import { products } from '@/data/content';
-import type { ProductType } from '@/data/types';
-import ButtonPrimary from '@/shared/Button/ButtonPrimary';
-import ButtonSecondary from '@/shared/Button/ButtonSecondary';
-import InputNumber from '@/shared/InputNumber/InputNumber';
+import LikeButton from "@/components/LikeButton";
+import { products } from "@/data/content";
+import type { ProductType } from "@/data/types";
+import ButtonPrimary from "@/shared/Button/ButtonPrimary";
+import ButtonSecondary from "@/shared/Button/ButtonSecondary";
+import InputNumber from "@/shared/InputNumber/InputNumber";
 
 const renderProduct = (item: ProductType) => {
-  const { productName, coverImage, currentPrice, slug, rating, productCategory } =
+  const { productName, coverImage, currentPrice, slug, rating, category } =
     item;
 
   return (
@@ -34,9 +34,7 @@ const renderProduct = (item: ProductType) => {
               <h3 className="font-medium md:text-2xl ">
                 <Link href={`/products/${slug}`}>{productName}</Link>
               </h3>
-              <span className="my-1 text-sm text-neutral-500">
-                {productCategory}
-              </span>
+              <span className="my-1 text-sm text-neutral-500">{category}</span>
               <div className="flex items-center gap-1">
                 <MdStar className="text-yellow-400" />
                 <span className="text-sm">{rating}</span>
@@ -51,7 +49,13 @@ const renderProduct = (item: ProductType) => {
             <AiOutlineDelete className="text-2xl" />
           </div>
           <div>
-            <InputNumber />
+            <InputNumber
+              quantity={quantity}
+              onChange={(newQuantity) =>
+                handleQuantityChange(name, newQuantity)
+              }
+              item={undefined}
+            />{" "}
           </div>
         </div>
       </div>
