@@ -41,28 +41,12 @@ export const topNavLinks: NavItemType[] = [
   {
     id: "ee46t",
     name: "Home",
-    href: "/home",
+    href: "/",
   },
-  {
-    id: "eerrrt",
-    name: "Blog",
-    href: "/blog",
-  },
-  {
-    id: "eexct",
-    name: "Collections",
-    href: "/products",
-  },
-  {
-    id: "h6ii8g",
-    name: "Contact",
-    href: "/contact",
-  },
-  {
-    id: "h678ty",
-    name: "FAQ",
-    href: "/faqs",
-  },
+  
+  
+  
+
   {
     id: "h6i78g",
     name: "Checkout",
@@ -79,29 +63,9 @@ export const NavLinks: NavItemType[] = [
   {
     id: "ee46t",
     name: "Home",
-    href: "/home",
-  },
-  {
-    id: "eerrrt",
-    name: "Blog",
-    href: "/blog",
-  },
-  {
-    id: "eexct",
-    name: "Collection",
-    href: "/products",
+    href: "/",
   },
 
-  {
-    id: "h6ii8g",
-    name: "Contact",
-    href: "/contact",
-  },
-  {
-    id: "h678ty",
-    name: "FAQ",
-    href: "/faqs",
-  },
   {
     id: "h6i78g",
     name: "Checkout",
