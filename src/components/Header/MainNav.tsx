@@ -1,15 +1,15 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { RiSearch2Line } from 'react-icons/ri';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { RiSearch2Line } from "react-icons/ri";
 
-import avatar from '@/public/assets/images/eva.png';
-import ButtonCircle3 from '@/shared/Button/ButtonCircle3';
-import Input from '@/shared/Input/Input';
-import Logo from '@/shared/Logo/Logo';
+import avatar from "@/public/assets/images/eva.png";
+import ButtonCircle3 from "@/shared/Button/ButtonCircle3";
+import Input from "@/shared/Input/Input";
+import Logo from "@/shared/Logo/Logo";
 
-import CartSideBar from '../CartSideBar';
-import MenuBar from './MenuBar';
+import CartSideBar from "../CartSideBar";
+import MenuBar from "./MenuBar";
 
 const MainNav = () => {
   return (
@@ -17,12 +17,16 @@ const MainNav = () => {
       <div className="flex-1 lg:hidden">
         <MenuBar />
       </div>
-      <div className="flex items-center gap-5 lg:basis-3/5">
+      <div className="flex items-center lg:basis-3/5">
         <Logo />
-        <div className="hidden w-full max-w-2xl items-center gap-5 rounded-full border border-neutral-300 py-1 pr-3 lg:flex">
+        <span className="my-auto ">
+          {" "}
+          Takam<span className="text-primary text-2xl italic font-bold">NOW</span>
+        </span>
+        <div className="hidden w-full ml-20 max-w-2xl items-center gap-5 rounded-full border border-neutral-300 py-1 pr-3 lg:flex">
           <Input
             type="text"
-            className="border-transparent bg-white placeholder:text-neutral-500 focus:border-transparent"
+            className="border-transparent bg-white pl-10 placeholder:text-neutral-500 focus:border-transparent"
             placeholder="WHat are you looking for..."
           />
           <RiSearch2Line className="text-2xl text-neutral-500" />
@@ -41,8 +45,10 @@ const MainNav = () => {
             
           </div> */}
 
-          <div className='h-10 items-center justify-center hidden md:flex px-2'>
-            <Link href={"/transactions"} className='text-primary underline'>Transactions</Link>
+          <div className="h-10 items-center justify-center hidden md:flex px-2">
+            <Link href={"/transactions"} className="text-primary underline">
+              Transactions
+            </Link>
           </div>
           <div className="flex items-center gap-2 pl-5">
             <ButtonCircle3 className="overflow-hidden bg-gray" size="w-10 h-10">

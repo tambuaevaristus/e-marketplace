@@ -113,10 +113,10 @@ export const NavLinks: NavItemType[] = [
     href: "/cart",
   },
   {
-    id: 'aijgay',
+    id: "aijgay",
     name: "Transactions",
-    href: '/transactions'
-  }
+    href: "/transactions",
+  },
 ];
 
 export const headerSection = {
@@ -173,6 +173,90 @@ export const products = [
         icon: <FaTruckFast className="text-xl text-secondary" />,
         title: "Estimated Arrival",
         description: "15 - 20 October 23",
+      },
+    ],
+  },
+
+  {
+    slug: "ndopRice",
+    productName: "Ndop Rice",
+    coverImage:
+      "https://buyamsalam.com/wp-content/uploads/2021/03/riz-ndop_rice_simple_25kg-300x300-1.jpg",
+    currentPrice: 20000,
+    previousPrice: 50000,
+    category: "Food",
+    rating: 4.8,
+    reviews: 230,
+    pieces_sold: 1200,
+    justIn: false,
+    shots: [
+      "https://example.com/ndop-rice-shot1.jpg",
+      "https://example.com/ndop-rice-shot2.jpg",
+    ],
+    overview:
+      "Locally sourced Ndop rice, known for its high quality and delicious taste. Perfect for family meals and special occasions.",
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: "Discount",
+        description: "> $20 Disc 5%",
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: "Delivery Time",
+        description: "3 - 5 Working days",
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: "Package",
+        description: "Sealed in airtight packaging for freshness",
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: "Estimated Arrival",
+        description: "25 - 27 October 23",
+      },
+    ],
+  },
+  {
+    slug: "bedLuxuryComfort",
+    productName: "Luxury Comfort Bed",
+    coverImage:
+      "https://zimcompass.ap-south-1.linodeobjects.com/zimcompass-product_5374638434784216412909.jpg",
+    currentPrice: 70000,
+    previousPrice: 85000,
+    category: "Furniture",
+    rating: 4.7,
+    reviews: 150,
+    pieces_sold: 340,
+    justIn: true,
+    shots: [
+      "https://zimcompass.ap-south-1.linodeobjects.com/zimcompass-product_5374638434784216412909.jpg",
+      "https://example.com/luxury-bed-shot2.jpg",
+      "https://example.com/luxury-bed-shot3.jpg",
+    ],
+    overview:
+      "Elegant and comfortable bed with premium materials. Offers excellent support for a restful night's sleep.",
+    shipment_details: [
+      {
+        icon: <PiPercentFill className="text-xl text-secondary" />,
+        title: "Discount",
+        description: "> $50 Disc 15%",
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-secondary" />,
+        title: "Delivery Time",
+        description: "10 - 15 Working days",
+      },
+      {
+        icon: <BsBoxFill className="text-xl text-secondary" />,
+        title: "Package",
+        description: "Eco-Friendly and durable packaging",
+      },
+      {
+        icon: <FaTruckFast className="text-xl text-secondary" />,
+        title: "Estimated Arrival",
+        description: "30 October - 5 November 23",
       },
     ],
   },
@@ -950,13 +1034,13 @@ const categories = [
   "Electronics",
 ];
 
-const shops =[
+const shops = [
   "Shops",
-  "Njiefobi Supper market", 
-  "Afumbom Super market", 
-  "MAMA es bAKERY", 
-  " TFC Buea"
-]
+  "Njiefobi Supper market",
+  "Afumbom Super market",
+  "MAMA es bAKERY",
+  " TFC Buea",
+];
 
 // const sizes = ['Size', 'S', 'M', 'L', 'XL', 'XXl'];
 const locations = ["Location", "Buea", "Douala", "Limbe", "Yaounde", "Bamenda"];
