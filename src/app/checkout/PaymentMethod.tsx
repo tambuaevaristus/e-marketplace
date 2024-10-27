@@ -147,7 +147,7 @@ const PaymentMethod: FC<Props> = ({
   };
 
   const renderOrangeMoney = () => {
-    const active = methodActive === "WalletOrange";
+    const active = (methodActive as string) === "WalletOrange";
     return (
       <div className="flex items-start space-x-4 sm:space-x-6">
         <Radio
@@ -189,7 +189,7 @@ const PaymentMethod: FC<Props> = ({
   };
 
   const renderMomo = () => {
-    const active = methodActive === "Walletmomo";
+    const active = (methodActive as string) === "Walletmomo";
     return (
       <div className="flex items-start space-x-4 sm:space-x-6">
         <Radio
