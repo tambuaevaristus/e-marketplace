@@ -9,7 +9,7 @@ const SectionBrands = () => {
   return (
     <div className="container">
       <Heading desc={brandsSection.description} isCenter isMain>
-        {brandsSection.heading}
+Our Verified Brand and Shops
       </Heading>
 
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

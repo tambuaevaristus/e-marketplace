@@ -25,8 +25,8 @@ const ContactInfo: FC<Props> = ({ isActive, onCloseActive, onOpenActive }) => {
           <div className="sm:ml-8">
             <div className="uppercase tracking-tight">CONTACT INFORMATION</div>
             <div className="mt-1 text-sm font-semibold">
-              <span className="">Clark Kent</span>
-              <span className="ml-3 tracking-tighter">+123-456-7890</span>
+              <span className="">Tambua Evaristus</span>
+              <span className="ml-3 tracking-tighter">+237676814364</span>
             </div>
           </div>
           <ButtonSecondary
@@ -50,7 +50,7 @@ const ContactInfo: FC<Props> = ({ isActive, onCloseActive, onOpenActive }) => {
               rounded="rounded-lg"
               sizeClass="h-12 px-4 py-3"
               className="border-neutral-300 bg-transparent placeholder:text-neutral-500 focus:border-primary"
-              defaultValue="+808 xxx"
+              defaultValue="+237 "
               type="tel"
             />
           </FormItem>
@@ -68,7 +68,7 @@ const ContactInfo: FC<Props> = ({ isActive, onCloseActive, onOpenActive }) => {
         <div>
           <Checkbox
             className="!text-sm"
-            name="uudai"
+            name="Eva"
             label="Email me news and offers"
             defaultChecked
           />
@@ -80,7 +80,7 @@ const ContactInfo: FC<Props> = ({ isActive, onCloseActive, onOpenActive }) => {
             className="shadow-none sm:!px-7"
             onClick={() => onCloseActive()}
           >
-            Save and go to Shipping
+            Save and Continue
           </ButtonPrimary>
           <ButtonSecondary
             className="mt-3 sm:ml-3 sm:mt-0"

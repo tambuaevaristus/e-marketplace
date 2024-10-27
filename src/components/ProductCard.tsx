@@ -1,10 +1,10 @@
-import Image from 'next/image';
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import Link from 'next/link';
+import Image from 'next/image';
 import type { FC } from 'react';
 import React from 'react';
 
 import type { ProductType } from '@/data/types';
-
 import LikeButton from './LikeButton';
 
 interface ProductCardProps {
@@ -29,16 +29,14 @@ const ProductCard: FC<ProductCardProps> = ({
           </div>
         )}
         <LikeButton className="absolute right-2 top-2" />
-        <Link
-          className="h-[250px] w-full lg:h-[220px]"
-          href={`/products/${product.slug}`}
-        >
+        <Link href={`/products/${product.slug}`} className="block h-full w-full">
           <Image
             src={product.coverImage}
             alt={`${product.productName} cover photo`}
-            width={100}
-            height={100}
-            className="size-full object-cover object-bottom"
+            layout="fill"
+            objectFit="contain"
+            objectPosition="bottom"
+            className="rounded-2xl"
           />
         </Link>
       </div>
@@ -50,7 +48,7 @@ const ProductCard: FC<ProductCardProps> = ({
               showPrevPrice ? 'block' : 'hidden'
             } text-sm line-through`}
           >
-            ${product.previousPrice}
+            {product.previousPrice} FCFA
           </p>
         </div>
 

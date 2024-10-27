@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import type { FC } from 'react';
-import React, { useState } from 'react';
-import { FaPaypal, FaRegCreditCard } from 'react-icons/fa6';
-import { MdOutlineCreditScore } from 'react-icons/md';
+import type { FC } from "react";
+import React, { useState } from "react";
+import { FaPaypal, FaRegCreditCard } from "react-icons/fa6";
+import { MdOutlineCreditScore } from "react-icons/md";
 
-import ButtonPrimary from '@/shared/Button/ButtonPrimary';
-import ButtonSecondary from '@/shared/Button/ButtonSecondary';
-import FormItem from '@/shared/FormItem';
-import Input from '@/shared/Input/Input';
-import Radio from '@/shared/Radio/Radio';
+import ButtonPrimary from "@/shared/Button/ButtonPrimary";
+import ButtonSecondary from "@/shared/Button/ButtonSecondary";
+import FormItem from "@/shared/FormItem";
+import Input from "@/shared/Input/Input";
+import Radio from "@/shared/Radio/Radio";
 
 interface Props {
   isActive: boolean;
@@ -22,12 +22,12 @@ const PaymentMethod: FC<Props> = ({
   onCloseActive,
   onOpenActive,
 }) => {
-  const [methodActive, setMethodActive] = useState<'Credit-Card' | 'Wallet'>(
-    'Credit-Card',
+  const [methodActive, setMethodActive] = useState<"Credit-Card" | "Wallet">(
+    "Credit-Card"
   );
 
   const renderDebitCredit = () => {
-    const active = methodActive === 'Credit-Card';
+    const active = methodActive === "Credit-Card";
     return (
       <div className="flex items-start space-x-4 sm:space-x-6">
         <Radio
@@ -41,7 +41,7 @@ const PaymentMethod: FC<Props> = ({
           <div className="flex items-center space-x-4 sm:space-x-6">
             <div
               className={`rounded-xl border-2 p-2.5 ${
-                active ? 'border-primary' : 'border-neutral-300'
+                active ? "border-primary" : "border-neutral-300"
               }`}
             >
               <FaRegCreditCard className="text-3xl" />
@@ -51,7 +51,7 @@ const PaymentMethod: FC<Props> = ({
 
           <div
             className={`mb-4 mt-6 space-y-3 sm:space-y-5 ${
-              active ? 'block' : 'hidden'
+              active ? "block" : "hidden"
             }`}
           >
             <div className="max-w-lg">
@@ -107,7 +107,7 @@ const PaymentMethod: FC<Props> = ({
   };
 
   const renderWallet = () => {
-    const active = methodActive === 'Wallet';
+    const active = methodActive === "Wallet";
     return (
       <div className="flex items-start space-x-4 sm:space-x-6">
         <Radio
@@ -120,17 +120,99 @@ const PaymentMethod: FC<Props> = ({
         <div className="flex-1">
           <div className="flex items-center space-x-4 sm:space-x-6 ">
             <div
-              className={`rounded-xl border-2 p-2.5 ${
-                active ? 'border-primary' : 'border-neutral-300'
+              className={`rounded-xl border-2 p-2.5 text-bold ${
+                active ? "border-primary" : "border-neutral-300"
               }`}
             >
               <FaPaypal className="text-3xl" />
             </div>
             <p className="font-medium">Paypal</p>
           </div>
-          <div className={`mb-4 mt-6 space-y-6 ${active ? 'block' : 'hidden'}`}>
+          <div className={`mb-4 mt-6 space-y-6 ${active ? "block" : "hidden"}`}>
             <div className="max-w-lg">
               <FormItem label="PayPal email">
+                <Input
+                  autoComplete="off"
+                  rounded="rounded-lg"
+                  sizeClass="h-12 px-4 py-3"
+                  className="border-neutral-300 bg-transparent placeholder:text-neutral-500 focus:border-primary"
+                  type="text"
+                />
+              </FormItem>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderOrangeMoney = () => {
+    const active = (methodActive as string) === "WalletOrange";
+    return (
+      <div className="flex items-start space-x-4 sm:space-x-6">
+        <Radio
+          className="pt-3.5"
+          name="payment-method"
+          id="WalletOrange"
+          defaultChecked={active}
+          onChange={(e) => setMethodActive(e as any)}
+        />
+        <div className="flex-1">
+          <div className="flex items-center space-x-4 sm:space-x-6 ">
+            <div
+              className={`rounded-xl border-2 p-2.5 font-bold ${
+                active
+                  ? "border-primary bg-primary text-white"
+                  : "border-neutral-300"
+              }`}
+            >
+              <p className="text-sm"> Orange</p>
+            </div>
+            <p className="font-medium">Orange Money</p>
+          </div>
+          <div className={`mb-4 mt-6 space-y-6 ${active ? "block" : "hidden"}`}>
+            <div className="max-w-lg">
+              <FormItem label="Mobile Money Number">
+                <Input
+                  autoComplete="off"
+                  rounded="rounded-lg"
+                  sizeClass="h-12 px-4 py-3"
+                  className="border-neutral-300 bg-transparent placeholder:text-neutral-500 focus:border-primary"
+                  type="text"
+                />
+              </FormItem>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderMomo = () => {
+    const active = (methodActive as string) === "Walletmomo";
+    return (
+      <div className="flex items-start space-x-4 sm:space-x-6">
+        <Radio
+          className="pt-3.5"
+          name="payment-method"
+          id="Walletmomo"
+          defaultChecked={active}
+          onChange={(e) => setMethodActive(e as any)}
+        />
+        <div className="flex-1">
+          <div className="flex items-center space-x-4 sm:space-x-6 ">
+            <div
+              className={`rounded-xl border-2 p-2.5 font-bold ${
+                active ? "border-primary" : "border-neutral-300"
+              }`}
+            >
+              <p className="text-sm fo text-black">MTN </p>
+            </div>
+            <p className="font-medium">MTN MOMO</p>
+          </div>
+          <div className={`mb-4 mt-6 space-y-6 ${active ? "block" : "hidden"}`}>
+            <div className="max-w-lg">
+              <FormItem label="Mobile Money Number">
                 <Input
                   autoComplete="off"
                   rounded="rounded-lg"
@@ -172,7 +254,7 @@ const PaymentMethod: FC<Props> = ({
 
       <div
         className={`space-y-6 border-t border-neutral-300 px-6 py-7 ${
-          isActive ? 'block' : 'hidden'
+          isActive ? "block" : "hidden"
         }`}
       >
         {/* ==================== */}
@@ -180,6 +262,8 @@ const PaymentMethod: FC<Props> = ({
 
         {/* ==================== */}
         <div>{renderWallet()}</div>
+        <div>{renderMomo()}</div>
+        <div>{renderOrangeMoney()}</div>
 
         <div className="flex pt-6">
           <ButtonPrimary

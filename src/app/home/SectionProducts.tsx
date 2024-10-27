@@ -2,7 +2,7 @@ import React from 'react';
 
 import Filter from '@/components/Filter';
 import ProductCard from '@/components/ProductCard';
-import { products, productsSection } from '@/data/content';
+import { productsSection, products } from '@/data/content';
 import ButtonPrimary from '@/shared/Button/ButtonPrimary';
 import Heading from '@/shared/Heading/Heading';
 
@@ -10,15 +10,15 @@ const SectionProducts = () => {
   return (
     <div className="container">
       <Heading isCenter isMain desc={productsSection.description}>
-        {productsSection.heading}
+Shop Now, Pay Later
       </Heading>
       <Filter />
 
       <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-        {products.map((shoe) => (
+        {products.map((product) => (
           <ProductCard
-            key={shoe.productName}
-            product={shoe}
+            key={product.productName}
+            product={product}
             className="border-neutral-300"
           />
         ))}

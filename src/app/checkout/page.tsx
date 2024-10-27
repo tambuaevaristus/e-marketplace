@@ -1,48 +1,69 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { AiOutlineDelete } from 'react-icons/ai';
-import { MdStar } from 'react-icons/md';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 
-import LikeButton from '@/components/LikeButton';
-import { products } from '@/data/content';
-import type { ProductType } from '@/data/types';
-import ButtonPrimary from '@/shared/Button/ButtonPrimary';
-import Input from '@/shared/Input/Input';
-import InputNumber from '@/shared/InputNumber/InputNumber';
+import LikeButton from "@/components/LikeButton";
+import ButtonPrimary from "@/shared/Button/ButtonPrimary";
+import InputNumber from "@/shared/InputNumber/InputNumber";
 
-import ContactInfo from './ContactInfo';
-import PaymentMethod from './PaymentMethod';
-import ShippingAddress from './ShippingAddress';
+import ContactInfo from "./ContactInfo";
+import PaymentMethod from "./PaymentMethod";
+import ShippingAddress from "./ShippingAddress";
+
+interface CartItem {
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
 
 const CheckoutPage = () => {
   const [tabActive, setTabActive] = useState<
-    'ContactInfo' | 'ShippingAddress' | 'PaymentMethod'
-  >('ShippingAddress');
+    "ContactInfo" | "ShippingAddress" | "PaymentMethod"
+  >("ShippingAddress");
+  const [cart, setCart] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem("@cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart) as CartItem[]);
+    }
+  }, []);
+
+  // Calculate subtotal based on cart items
+  const calculateSubtotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  // Update quantity for a cart item and recalculate subtotal
+  const handleQuantityChange = (name: string, newQuantity: number) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.name === name ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
 
   const handleScrollToEl = (id: string) => {
     const element = document.getElementById(id);
     setTimeout(() => {
-      element?.scrollIntoView({ behavior: 'smooth' });
+      element?.scrollIntoView({ behavior: "smooth" });
     }, 80);
   };
 
-  const renderProduct = (item: ProductType) => {
-    const { productName, coverImage, currentPrice, slug, rating, category } =
-      item;
+  const renderProduct = (item: CartItem) => {
+    const { name, image, price, quantity } = item;
 
     return (
-      <div key={productName} className="flex py-5 last:pb-0">
+      <div key={name} className="flex py-5 last:pb-0">
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl md:h-40 md:w-40">
-          <Image
-            fill
-            src={coverImage}
-            alt={productName}
+          <img
+            src={image}
+            alt={name}
             className="h-full w-full object-contain object-center"
           />
-          <Link className="absolute inset-0" href={`/products/${slug}`} />
         </div>
 
         <div className="ml-4 flex flex-1 flex-col justify-between">
@@ -50,17 +71,10 @@ const CheckoutPage = () => {
             <div className="flex justify-between ">
               <div>
                 <h3 className="font-medium md:text-2xl ">
-                  <Link href={`/products/${slug}`}>{productName}</Link>
+                  <Link href={`/products/`}>{name}</Link>
                 </h3>
-                <span className="my-1 text-sm text-neutral-500">
-                  {category}
-                </span>
-                <div className="flex items-center gap-1">
-                  <MdStar className="text-yellow-400" />
-                  <span className="text-sm">{rating}</span>
-                </div>
               </div>
-              <span className="font-medium md:text-xl">${currentPrice}</span>
+              <span className="font-medium md:text-xl">{price}FCFA</span>
             </div>
           </div>
           <div className="flex w-full items-end justify-between text-sm">
@@ -69,7 +83,10 @@ const CheckoutPage = () => {
               <AiOutlineDelete className="text-2xl" />
             </div>
             <div>
-              <InputNumber />
+              <InputNumber
+                quantity={quantity}
+                onChange={(newQuantity) => handleQuantityChange(name, newQuantity)} item={undefined as any}                // item={undefined}
+              />{" "}
             </div>
           </div>
         </div>
@@ -82,40 +99,40 @@ const CheckoutPage = () => {
       <div className="space-y-8">
         <div id="ContactInfo" className="scroll-mt-24">
           <ContactInfo
-            isActive={tabActive === 'ContactInfo'}
+            isActive={tabActive === "ContactInfo"}
             onOpenActive={() => {
-              setTabActive('ContactInfo');
-              handleScrollToEl('ContactInfo');
+              setTabActive("ContactInfo");
+              handleScrollToEl("ContactInfo");
             }}
             onCloseActive={() => {
-              setTabActive('ShippingAddress');
-              handleScrollToEl('ShippingAddress');
+              setTabActive("ShippingAddress");
+              handleScrollToEl("ShippingAddress");
             }}
           />
         </div>
 
         <div id="ShippingAddress" className="scroll-mt-24">
           <ShippingAddress
-            isActive={tabActive === 'ShippingAddress'}
+            isActive={tabActive === "ShippingAddress"}
             onOpenActive={() => {
-              setTabActive('ShippingAddress');
-              handleScrollToEl('ShippingAddress');
+              setTabActive("ShippingAddress");
+              handleScrollToEl("ShippingAddress");
             }}
             onCloseActive={() => {
-              setTabActive('PaymentMethod');
-              handleScrollToEl('PaymentMethod');
+              setTabActive("PaymentMethod");
+              handleScrollToEl("PaymentMethod");
             }}
           />
         </div>
 
         <div id="PaymentMethod" className="scroll-mt-24">
           <PaymentMethod
-            isActive={tabActive === 'PaymentMethod'}
+            isActive={tabActive === "PaymentMethod"}
             onOpenActive={() => {
-              setTabActive('PaymentMethod');
-              handleScrollToEl('PaymentMethod');
+              setTabActive("PaymentMethod");
+              handleScrollToEl("PaymentMethod");
             }}
-            onCloseActive={() => setTabActive('PaymentMethod')}
+            onCloseActive={() => setTabActive("PaymentMethod")}
           />
         </div>
       </div>
@@ -139,42 +156,13 @@ const CheckoutPage = () => {
           <div className="w-full lg:w-[36%] ">
             <h3 className="text-lg font-semibold">Order summary</h3>
             <div className="mt-8 divide-y divide-neutral-300">
-              {products.slice(0, 3).map((item) => renderProduct(item))}
+              {cart.map((item) => renderProduct(item))}
             </div>
 
             <div className="mt-10 border-t border-neutral-300 pt-6 text-sm">
-              <div>
-                <div className="text-sm">Discount code</div>
-                <div className="mt-1.5 flex">
-                  <Input
-                    rounded="rounded-lg"
-                    sizeClass="h-12 px-4 py-3"
-                    className="flex-1 border-neutral-300 bg-transparent placeholder:text-neutral-500 focus:border-primary"
-                  />
-                  <button
-                    type="button"
-                    className="ml-3 flex w-24 items-center justify-center rounded-2xl border border-neutral-300 bg-gray px-4 text-sm font-medium transition-colors hover:bg-neutral-100"
-                  >
-                    Apply
-                  </button>
-                </div>
-              </div>
-
-              <div className="mt-4 flex justify-between pb-4">
-                <span>Subtotal</span>
-                <span className="font-semibold">$249.00</span>
-              </div>
-              <div className="flex justify-between py-4">
-                <span>Estimated Delivery & Handling</span>
-                <span className="font-semibold">Free</span>
-              </div>
-              <div className="flex justify-between py-4">
-                <span>Estimated taxes</span>
-                <span className="font-semibold">$24.90</span>
-              </div>
               <div className="flex justify-between pt-4 text-base font-semibold">
                 <span>Total</span>
-                <span>$276.00</span>
+                <span className="text-2xl"> {calculateSubtotal()} FCFA</span>
               </div>
             </div>
             <ButtonPrimary className="mt-8 w-full">Confirm order</ButtonPrimary>

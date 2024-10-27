@@ -12,6 +12,7 @@ export default bundleAnalyzer({
   },
   swcMinify: false,
   images: {
+    domains: ['dailytrust.com'],
     remotePatterns: [
       {
         protocol: 'https',
