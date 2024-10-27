@@ -266,8 +266,8 @@ export const products = [
     productName: "Smart Watch Pro",
     coverImage:
       "https://m.media-amazon.com/images/I/71iWc8b-azL._AC_SL1500_.jpg",
-    currentPrice: 249,
-    previousPrice: 299,
+    currentPrice: 15000,
+    previousPrice: 16000,
     category: "Electronics",
     rating: 4.7,
     reviews: 230,
@@ -310,8 +310,8 @@ export const products = [
     productName: "Noise Cancelling Headphones",
     coverImage:
       "https://m.media-amazon.com/images/I/51sZFm7L2BL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
-    currentPrice: 159,
-    previousPrice: 199,
+    currentPrice: 12000,
+    previousPrice: 15000,
     category: "Audio Equipment",
     rating: 4.8,
     reviews: 180,
@@ -352,8 +352,8 @@ export const products = [
     productName: "Fitness Yoga Mat",
     coverImage:
       "https://m.media-amazon.com/images/I/71I2r88GXhL._AC_SL1500_.jpg",
-    currentPrice: 35,
-    previousPrice: 50,
+    currentPrice: 3000,
+    previousPrice: 3500,
     category: "Fitness Equipment",
     rating: 4.6,
     reviews: 98,
@@ -395,8 +395,8 @@ export const products = [
     productName: "Gaming Laptop Pro",
     coverImage:
       "https://m.media-amazon.com/images/I/61PSDa30RnL._AC_SL1280_.jpg",
-    currentPrice: 1299,
-    previousPrice: 1599,
+    currentPrice: 450000,
+    previousPrice: 500000,
     category: "Computers",
     rating: 4.9,
     reviews: 280,
@@ -439,8 +439,8 @@ export const products = [
     productName: "Vegan Protein Powder",
     coverImage:
       "https://m.media-amazon.com/images/I/8153FufObjL._AC_SL1500_.jpg",
-    currentPrice: 29,
-    previousPrice: 35,
+    currentPrice: 9000,
+    previousPrice: 10000,
     category: "Health & Wellness",
     rating: 4.7,
     reviews: 110,
@@ -950,6 +950,14 @@ const categories = [
   "Electronics",
 ];
 
+const shops =[
+  "Shops",
+  "Njiefobi Supper market", 
+  "Afumbom Super market", 
+  "MAMA es bAKERY", 
+  " TFC Buea"
+]
+
 // const sizes = ['Size', 'S', 'M', 'L', 'XL', 'XXl'];
 const locations = ["Location", "Buea", "Douala", "Limbe", "Yaounde", "Bamenda"];
 const prices = [
@@ -960,7 +968,7 @@ const prices = [
   "Above 50k FCFA",
 ];
 
-export const filters = [categories, prices, locations];
+export const filters = [categories, prices, locations, shops];
 
 export const brandsSection = {
   heading: "The Official Store of The Amazing Brand",

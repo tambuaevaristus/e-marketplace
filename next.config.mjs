@@ -12,23 +12,17 @@ export default bundleAnalyzer({
   },
   swcMinify: false,
   images: {
-    domains: ['dailytrust.com'],
+    // Allow images from all domains
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.pexels.com',
+        hostname: '**', // This allows any hostname
         port: '',
         pathname: '/**',
       },
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'm.media-amazon.com',
+        protocol: 'http',
+        hostname: '**', // This allows any hostname
         port: '',
         pathname: '/**',
       },
