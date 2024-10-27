@@ -113,6 +113,7 @@ const CheckoutPage = () => {
 
         <div id="ShippingAddress" className="scroll-mt-24">
           <ShippingAddress
+            sumTotal = {calculateSubtotal()}
             isActive={tabActive === "ShippingAddress"}
             onOpenActive={() => {
               setTabActive("ShippingAddress");

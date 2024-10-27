@@ -1,7 +1,7 @@
 "use client";
 
 import type { FC } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TbTruckDelivery } from "react-icons/tb";
 
 import ButtonPrimary from "@/shared/Button/ButtonPrimary";
@@ -13,11 +13,21 @@ interface Props {
   isActive: boolean;
   onCloseActive: () => void;
   onOpenActive: () => void;
+  sumTotal: number;
 }
 
-const ShippingAddress: FC<Props> = ({
-  onCloseActive,
-}) => {
+const ShippingAddress: FC<Props> = ({ onCloseActive, sumTotal }) => {
+  console.log("THe total", sumTotal);
+
+  const [balance, setBalance] = useState(0);
+
+  useEffect(() => {
+    // Calculate 30% of sumTotal
+    const calculatedBalance = sumTotal * 0.3;
+    // Update the balance state
+    setBalance(calculatedBalance);
+  }, [sumTotal]); // Dependency array to run effect when sumTotal changes
+
   return (
     <div className="rounded-xl border border-neutral-300 ">
       <div className="flex flex-col items-start p-6 sm:flex-row">
@@ -45,10 +55,12 @@ const ShippingAddress: FC<Props> = ({
               defaultChecked
             />
             <Radio
-              label="Buy Now Pay Later (Minimum Deposit of 20%)"
+              label="Buy Now Pay Later"
               id="Address-type-office"
               name="Address-type"
             />
+                  <p className="text-primary">YOu need a min of {balance}FCFA  to process this transaction</p>
+
           </div>
         </FormItem>
       </div>
